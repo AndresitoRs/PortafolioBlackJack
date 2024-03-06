@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="fondo" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@estilos.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ad.portafolioblackjack.ControladorBlackJack">
+   <VBox alignment="CENTER">
+      <children>
+         <AnchorPane fx:id="ordenadorLugar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+            <HBox.margin>
+               <Insets />
+            </HBox.margin>
+            <VBox.margin>
+               <Insets bottom="50.0" />
+            </VBox.margin>
+         </AnchorPane>
+         <Label fx:id="puntuacionMaquina" minHeight="40.0" style="-fx-background-color: white; -fx-label-padding: 10; -fx-background-radius: 30;" text="Puntuación máquina">
+            <VBox.margin>
+               <Insets />
+            </VBox.margin>
+            <font>
+               <Font name="Arial Rounded MT Bold" size="12.0" />
+            </font>
+         </Label>
+      </children>
+      <VBox.margin>
+         <Insets />
+      </VBox.margin>
+   </VBox>
+   <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+      <children>
+         <VBox fx:id="pedirBox" alignment="CENTER">
+            <children>
+               <Button fx:id="btnPedir" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#cartaJugador" prefHeight="90.0" prefWidth="180.0" style="-fx-background-color: gray; -fx-background-radius: 30;" text="Deal">
+                  <VBox.margin>
+                     <Insets right="80.0" />
+                  </VBox.margin>
+                  <font>
+                     <Font name="Cooper Black" size="29.0" />
+                  </font>
+                  <graphic>
+                     <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@iconos/pedir.png" />
+                        </image>
+                     </ImageView>
+                  </graphic>
+               </Button>
+            </children>
+            <HBox.margin>
+               <Insets />
+            </HBox.margin>
+         </VBox>
+         <VBox fx:id="opciones" alignment="CENTER">
+            <HBox.margin>
+               <Insets />
+            </HBox.margin>
+         </VBox>
+         <VBox fx:id="pararBox" alignment="CENTER">
+            <children>
+               <Button fx:id="btnParar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#terminarTurno" prefHeight="90.0" prefWidth="180.0" style="-fx-background-color: gray; -fx-background-radius: 30;" text="Stand">
+                  <VBox.margin>
+                     <Insets left="80.0" />
+                  </VBox.margin>
+                  <font>
+                     <Font name="Cooper Black" size="29.0" />
+                  </font>
+                  <graphic>
+                     <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@iconos/parar.png" />
+                        </image>
+                     </ImageView>
+                  </graphic>
+               </Button>
+            </children>
+         </VBox>
+      </children>
+      <VBox.margin>
+         <Insets bottom="40.0" top="40.0" />
+      </VBox.margin>
+   </HBox>
+   <VBox alignment="CENTER">
+      <children>
+         <Label fx:id="puntuacionJugador" minHeight="40.0" style="-fx-background-color: white; -fx-label-padding: 10; -fx-background-radius: 30;" text="Tu puntuacion">
+            <VBox.margin>
+               <Insets />
+            </VBox.margin>
+            <font>
+               <Font name="Arial Rounded MT Bold" size="12.0" />
+            </font></Label>
+         <AnchorPane fx:id="jugadorLugar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+            <HBox.margin>
+               <Insets />
+            </HBox.margin>
+            <VBox.margin>
+               <Insets top="50.0" />
+            </VBox.margin>
+         </AnchorPane>
+      </children>
+   </VBox>
+   <padding>
+      <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+   </padding>
+</VBox>
