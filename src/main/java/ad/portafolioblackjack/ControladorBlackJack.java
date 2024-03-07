@@ -251,6 +251,14 @@ public class ControladorBlackJack implements Initializable {
             }
         }
         terminarPartida();
+
+        if(creditos <= 0) {
+            Alert alerta0cred = new Alert(Alert.AlertType.INFORMATION);
+            alerta0cred.setTitle("Te quedaste sin créditos pendejo");
+            alerta0cred.setContentText("0 créditos restantes, se acabó el juego");
+            alerta0cred.showAndWait();
+            mostrarOpciones();
+        }
     }
 
     //Método que bloquea cualquier acción excepto volver a jugar tras terminar la partida
@@ -286,6 +294,7 @@ public class ControladorBlackJack implements Initializable {
 
         btnPedir.setDisable(true);
         btnParar.setDisable(true);
+        creditos = 5;
     }
 
     private void guardarPuntuación() {
