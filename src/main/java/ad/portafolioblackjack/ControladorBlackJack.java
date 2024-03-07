@@ -26,11 +26,11 @@ public class ControladorBlackJack implements Initializable {
     Label puntuacionMaquina;
     @FXML
     Label puntuacionJugador;
-
     List<Carta> baraja;
     List<Carta> ordenador;
     List<Carta> jugador;
-
+    @FXML
+    Label cred;
     @FXML
     AnchorPane ordenadorLugar;
     @FXML
@@ -57,43 +57,33 @@ public class ControladorBlackJack implements Initializable {
         mostrarOpciones();
     }
 
-    //Método para iniciar la partida
     public void iniciarPartida() {
-
-        //Se limpia todos los cambios de la partida anterior
-
         mostrarOpciones();
 
         opciones.getChildren().remove(1);
 
-        //Se oculta la selección de opciones
-
         btnPlay.setVisible(false);
         btnRanking.setVisible(false);
-
-        //Se crean los mazos y las barajas
 
         this.baraja = new ArrayList<>();
         this.ordenador = new ArrayList<>();
         this.jugador = new ArrayList<>();
         this.crearBaraja();
 
-        //Se muestra oda la información y botones de juego
-
         jugadorLugar.setVisible(true);
         ordenadorLugar.setVisible(true);
         pararBox.setVisible(true);
         pedirBox.setVisible(true);
+        cred.setVisible(true);
         puntuacionJugador.setVisible(true);
         puntuacionMaquina.setVisible(true);
 
-        //Se entregan las dos primeras cartas a los jugadores
+        cred.setVisible(true);
 
         cartaJugador();
         cartaOrdenador();
         cartaJugador();
         cartaOrdenador();
-
     }
 
     //Deshace todos los cambios de la partida para poder empezar una nueva
@@ -139,12 +129,13 @@ public class ControladorBlackJack implements Initializable {
         pararBox.setVisible(false);
         pedirBox.setVisible(false);
         puntuacionJugador.setVisible(false);
+        cred.setVisible(false);
         puntuacionMaquina.setVisible(false);
 
         //Se reinician puntuaciones
 
         puntuacionJugador.setText("Tu puntuación: 0");
-        puntuacionMaquina.setText("Puntuación maquina: X");
+        puntuacionMaquina.setText("Puntuación maquina: 0");
 
     }
 
@@ -203,8 +194,6 @@ public class ControladorBlackJack implements Initializable {
 
 
             } else if (puntuarOrdenador() == puntuarJugador()) {
-
-                //Ambos tienen BlackJack (Empate)
 
                 //Falta comprobación de que el ordenador tenga puntuación y sea > 17
 
@@ -353,13 +342,9 @@ public class ControladorBlackJack implements Initializable {
                 //Si la puntuacion no se pasa de 21 al sumar 11, se cambia el valor a 11
 
                 ultimaCarta.setValor(11);
-
             }
-
             //Si la puntuacion se pasa de 21 al sumar 11 no hacemos nada :)
-
         }
-
         puntuarJugador();
 
         //Si la puntuación del jugador supera los 20 puntos, termina el turno automáticamente
@@ -408,7 +393,6 @@ public class ControladorBlackJack implements Initializable {
             }
 
             //Si la puntuacion se pasa de 21 al sumar 11 no hacemos nada :)
-
         }
     }
 
@@ -456,6 +440,4 @@ public class ControladorBlackJack implements Initializable {
     public void setJugador(List<Carta> jugador) {
         this.jugador = jugador;
     }
-
-
 }
