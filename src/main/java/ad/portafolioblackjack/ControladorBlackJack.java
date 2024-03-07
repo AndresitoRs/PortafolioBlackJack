@@ -88,6 +88,18 @@ public class ControladorBlackJack implements Initializable {
         cartaJugador();
         cartaOrdenador();
     }
+    private void limpiarTablero() {
+
+        //Se limpia todo el tablero
+
+        ordenadorLugar.getChildren().clear();
+        jugadorLugar.getChildren().clear();
+        opciones.getChildren().clear();
+
+        btnPedir.setDisable(false);
+        btnParar.setDisable(false);
+    }
+
 
     //Deshace todos los cambios de la partida para poder empezar una nueva
     public void mostrarOpciones() {
@@ -143,19 +155,6 @@ public class ControladorBlackJack implements Initializable {
 
     }
 
-    private void limpiarTablero() {
-
-        //Se limpian los mazos de ambos jugadores
-
-        ordenadorLugar.getChildren().clear();
-        jugadorLugar.getChildren().clear();
-        opciones.getChildren().clear();
-
-        //Se deshabilitan los botones de juego
-
-        btnPedir.setDisable(false);
-        btnParar.setDisable(false);
-    }
 
 
     //Método para continuar cuando termina el turno del jugador
@@ -257,6 +256,7 @@ public class ControladorBlackJack implements Initializable {
             Alert alerta0cred = new Alert(Alert.AlertType.INFORMATION);
             alerta0cred.setTitle("Te quedaste sin créditos pendejo");
             alerta0cred.setContentText("0 créditos restantes, se acabó el juego");
+            alerta0cred.setTitle("Banca rota");
             alerta0cred.showAndWait();
             mostrarOpciones();
             creditos = 5;
@@ -266,7 +266,6 @@ public class ControladorBlackJack implements Initializable {
     //Método que bloquea cualquier acción excepto volver a jugar tras terminar la partida
     private void terminarPartida() {
 
-        guardarPuntuación();
 
         //Se muestra los botones que permiten reiniciar la partida o salir
 
@@ -298,12 +297,6 @@ public class ControladorBlackJack implements Initializable {
         btnParar.setDisable(true);
     }
 
-    private void guardarPuntuación() {
-        Jugador jugador = new Jugador();
-        jugador.setNombre("");
-        jugador.setPuntuación(1);
-
-    }
 
     //Método para voltear la primera carta de lá máquina
     private void mostrarCartaOrdenador() {
@@ -344,7 +337,6 @@ public class ControladorBlackJack implements Initializable {
         return carta;
     }
 
-    //Método para repartir una carta al jugador
     public void cartaJugador() {
         this.jugador.add(this.sacarCarta());
         Carta ultimaCarta = this.jugador.get(this.jugador.size() - 1);
@@ -421,11 +413,9 @@ public class ControladorBlackJack implements Initializable {
 
             }
 
-            //Si la puntuacion se pasa de 21 al sumar 11 no hacemos nada :)
+            //Si la puntuacion se pasa de 21 al sumar 11 no hacemos nada
         }
     }
-
-    //Establece la puntuación de la máquina con la suma de los valores de las cartas
     public int puntuarOrdenador() {
         AtomicInteger suma = new AtomicInteger();
         this.ordenador.forEach(carta -> {
@@ -434,8 +424,6 @@ public class ControladorBlackJack implements Initializable {
         return suma.intValue();
     }
 
-
-    //Establece la puntuación del jugador con la suma de los valores de las cartas
     public int puntuarJugador() {
         AtomicInteger suma = new AtomicInteger();
         this.jugador.forEach(carta -> {

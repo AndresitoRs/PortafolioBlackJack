@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="fondo" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@estilos.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ad.portafolioblackjack.ControladorBlackJack">
+<VBox fx:id="fondo" alignment="CENTER" maxHeight="-Infinity"  style="-fxbackground-image: url(iconos/captura.PNG);" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@estilos.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ad.portafolioblackjack.ControladorBlackJack">
    <VBox alignment="CENTER">
       <children>
          <AnchorPane fx:id="ordenadorLugar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
@@ -114,7 +114,7 @@
          <Font name="Broadway" size="27.0" />
       </font>
       <VBox.margin>
-         <Insets top="10.0" />
+         <Insets left="90.0" top="10.0" />
       </VBox.margin>
    </Label>
    <padding>
