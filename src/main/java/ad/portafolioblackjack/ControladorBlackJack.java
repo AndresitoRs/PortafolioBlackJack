@@ -92,6 +92,7 @@ public class ControladorBlackJack implements Initializable {
     //Deshace todos los cambios de la partida para poder empezar una nueva
     public void mostrarOpciones() {
 
+
         //Limpia el tablero
 
         limpiarTablero();
@@ -258,6 +259,7 @@ public class ControladorBlackJack implements Initializable {
             alerta0cred.setContentText("0 créditos restantes, se acabó el juego");
             alerta0cred.showAndWait();
             mostrarOpciones();
+            creditos = 5;
         }
     }
 
@@ -294,7 +296,6 @@ public class ControladorBlackJack implements Initializable {
 
         btnPedir.setDisable(true);
         btnParar.setDisable(true);
-        creditos = 5;
     }
 
     private void guardarPuntuación() {
