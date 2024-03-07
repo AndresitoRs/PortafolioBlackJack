@@ -18,8 +18,10 @@ import java.net.URL;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
+
 public class ControladorBlackJack implements Initializable {
 
+    int creditos = 5;
     @FXML
     VBox fondo;
     @FXML
@@ -75,6 +77,7 @@ public class ControladorBlackJack implements Initializable {
         pararBox.setVisible(true);
         pedirBox.setVisible(true);
         cred.setVisible(true);
+        cred.setText("Creditos restantes actuales: " + creditos);
         puntuacionJugador.setVisible(true);
         puntuacionMaquina.setVisible(true);
 
@@ -157,6 +160,7 @@ public class ControladorBlackJack implements Initializable {
     //Método para continuar cuando termina el turno del jugador
     public void terminarTurno() {
 
+
         Alert alertaganar = new Alert(Alert.AlertType.CONFIRMATION);
         Alert alertaperder = new Alert(Alert.AlertType.ERROR);
         Alert alertaempate = new Alert(Alert.AlertType.INFORMATION);
@@ -176,9 +180,15 @@ public class ControladorBlackJack implements Initializable {
 
             alertaganar.showAndWait();
 
+            //Si el jugador gana con 21 se le suman dos creditos para seguir jugando
+            cred.setText("Creditos restantes actuales: "+ (creditos + 2));
+            creditos=creditos+2;
+
         } else if (puntuarJugador() > 21 ){
 
             alertaperder.showAndWait();
+            cred.setText("Creditos restantes actuales: "+ (creditos + -1));
+            creditos=creditos-1;
 
         } else {
             //Se voltea la primera carta de la máquina para comparar puntuaciones
@@ -191,6 +201,8 @@ public class ControladorBlackJack implements Initializable {
             if(puntuarOrdenador() > 21) {
 
                 alertaganar.showAndWait();
+                cred.setText("Creditos restantes actuales: "+ (creditos + 1));
+                creditos=creditos+1;
 
 
             } else if (puntuarOrdenador() == puntuarJugador()) {
@@ -198,6 +210,7 @@ public class ControladorBlackJack implements Initializable {
                 //Falta comprobación de que el ordenador tenga puntuación y sea > 17
 
                 alertaempate.showAndWait();
+                cred.setText("Creditos restantes actuales: "+ (creditos));
 
             } else {
 
@@ -218,6 +231,8 @@ public class ControladorBlackJack implements Initializable {
                 if (puntuarOrdenador() > 21) {
                     //Es superior a 21 (Victoria)
                     alertaganar.showAndWait();
+                    cred.setText("Creditos restantes actuales: "+ (creditos + 1));
+                    creditos=creditos+1;
 
                 } else if (puntuarOrdenador() == puntuarJugador()) {
 
@@ -226,8 +241,12 @@ public class ControladorBlackJack implements Initializable {
                 } else if (puntuarOrdenador() > puntuarJugador()){
 
                     alertaperder.showAndWait();
+                    cred.setText("Creditos restantes actuales: "+ (creditos - 1));
+                    creditos=creditos-1;
                 } else {
                     alertaganar.showAndWait();
+                    cred.setText("Creditos restantes actuales: "+ (creditos + 1));
+                    creditos=creditos+1;
                 }
             }
         }

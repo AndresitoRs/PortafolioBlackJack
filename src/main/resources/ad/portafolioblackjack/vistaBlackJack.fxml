@@ -109,7 +109,7 @@
          </AnchorPane>
       </children>
    </VBox>
-   <Label fx:id="cred" minHeight="40.0" prefHeight="74.0" prefWidth="437.0" text="Créditos restantes actuales:" textFill="#fcfcfc">
+   <Label fx:id="cred" minHeight="40.0" prefHeight="74.0" prefWidth="540.0" text="Créditos restantes actuales:" textFill="#fcfcfc">
       <font>
          <Font name="Broadway" size="27.0" />
       </font>
