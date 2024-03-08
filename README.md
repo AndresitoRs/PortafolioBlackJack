@@ -46,7 +46,7 @@ Para dar comienzo a su funcionamiento debemos ejecutar el ejecutable JAR o la cl
 
         Derrota: El jugador perderá si la CPU consigue 21 puntos o una puntuación mayor que la suya al decidir plantarse, si esto ocurre, el jugador perderá un crédito para seguir apostando.
 
--1.4: 0 créditos restantes
+- 1.4: 0 créditos restantes
 
    Si el jugador se queda con 0 créditos, será redirigido al menú principal para reflexionar, ya que ha perdido su don de las apuestas, si decide volver a jugar,
    partirá de nuevo con 5 créditos
