@@ -28,13 +28,13 @@ Para dar comienzo a su funcionamiento debemos ejecutar el ejecutable JAR o la cl
   
 - 1.2 : Turno de la máquina
 
--La máquina inicia su turno y sacará otra carta siempre que su puntuación sea menor que la del jugador, cómo al mismo jugador, le pueden ocurrir el caso de pasarse de 21, 
- lo cual terminaría en una derrota instanánea por pasarse, también se desvelará su carta inicial y se hará la suma de las puntuaciones de las correspondientes 
- de usuario y máquina para determinar el último paso.
+   La máquina inicia su turno y sacará otra carta siempre que su puntuación sea menor que la del jugador, cómo al mismo jugador, le pueden ocurrir el caso de pasarse de 21, 
+   lo cual terminaría en una derrota instanánea por pasarse, también se desvelará su carta inicial y se hará la suma de las puntuaciones de las correspondientes 
+   de usuario y máquina para determinar el último paso.
 
 - 1.3 : Fin de la partida
 
-La partida finalizará con los posibles casos:
+   La partida finalizará con los posibles casos:
 
         Derrotas inmediatas: El jugador o la máquina pierden automáticamente ya que su puntuación supera 21, se ganará o perderá un crédito si la consola se pasa, y se perderá uno si el usuario pierde.
 
@@ -48,9 +48,14 @@ La partida finalizará con los posibles casos:
 
 -1.4: 0 créditos restantes
 
-Si el jugador se queda con 0 créditos, será redirigido al menú principal para reflexionar, ya que ha perdido su don de las apuestas, si decide volver a jugar,
-partirá de nuevo con 5 créditos
+  Si el jugador se queda con 0 créditos, será redirigido al menú principal para reflexionar, ya que ha perdido su don de las apuestas, si decide volver a jugar,
+  partirá de nuevo con 5 créditos
 
-Andrés Rivada Sánchez, 08/03/2024, Portafolio UD6 Interfaces
+
+
+
+
+
+                                                                                                                                                  Andrés Rivada Sánchez, 08/03/2024, Portafolio UD6 Interfaces
       
  
