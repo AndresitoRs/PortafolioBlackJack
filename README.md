@@ -48,8 +48,8 @@ Para dar comienzo a su funcionamiento debemos ejecutar el ejecutable JAR o la cl
 
 -1.4: 0 créditos restantes
 
-  Si el jugador se queda con 0 créditos, será redirigido al menú principal para reflexionar, ya que ha perdido su don de las apuestas, si decide volver a jugar,
-  partirá de nuevo con 5 créditos
+   Si el jugador se queda con 0 créditos, será redirigido al menú principal para reflexionar, ya que ha perdido su don de las apuestas, si decide volver a jugar,
+   partirá de nuevo con 5 créditos
 
 
 
